@@ -1,0 +1,90 @@
+
+div
+{
+    display: block;
+}
+
+body
+{
+    background: #3B3C62 url(images/monsterdashmuz.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#top-text
+{
+    color: #099970;
+}
+
+
+.feedback
+{
+    text-align: left;
+    font-size: 16px;
+    font-family: toonish;
+    text-shadow: 2px 2px 2px
+    black;
+    text-align: center;
+}
+
+#bg-body-left
+{
+    background: url(images/bg-body-left.png) no-repeat;
+    height: 768px;
+    width: 445px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -100;
+}
+
+#bg-body-right
+{
+    background: url(images/bg-body-right.png) no-repeat;
+    height: 768px;
+    width: 445px;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -100;
+}
+
+#game
+{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+#game-wrapper
+{
+    width: 1024px;
+    height: 768px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 100;
+}
+
+/*this is what we want the div to look like
+when it is not showing*/
+div.loading-invisible{
+    /*make invisible*/
+    display:none;
+}
+
+/*this is what we want the div to look like
+when it IS showing*/
+div.loading-visible{
+    /*make visible*/
+    display:block;
+
+    /*position it 200px down the screen*/
+    position:absolute;
+    top:230px;
+    left:0;
+    width:100%;
+    text-align:center;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>DonsterMash</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="framework/ImageRect.js"></script>
+    <script src="framework/Text2D.js"></script>
+    <script src="framework/Sprite.js"></script>
+    <script src="framework/View.js"></script>
+    <script src="framework/Window.js"></script>
+    <script src="framework/TWSound.js"></script>
+    <script src="framework/TWSoundChannel.js"></script>
+    <script src="framework/TWSoundManager.js"></script>
+    <script src="framework/event.js"></script>
+    <script src="DonsterPair.js"></script>
+    <script src="DonsterTrio.js"></script>
+    <script src="DonsterJump.js"></script>
+    <script src="DonsterTimer.js"></script>
+    <script src="DonsterBarry.js"></script>
+    <script src="DonsterMonster.js"></script>
+    <script src="DonsterParallax.js"></script>
+    <script src="DonsterWall.js"></script>
+    <script src="DonsterWeapon.js"></script>
+    <script src="DonsterLife.js"></script>
+    <script src="DonsterLifeBar.js"></script>
+    <script src="DonsterDistanceCounter.js"></script>
+    <script src="DonsterGame.js"></script>
+    <script src="Main.js"></script>
+</head>
+<body>
+    <div align="center">
+        <div id="bg-body-left"></div>
+        <div id="bg-body-right"></div>
+
+        <div id="game">
+            <div id="game-wrapper">
+                <div id="top-text" class="feedback">
+                    <h2>Tumbleweed prototype</h2>
+                </div>
+
+                <div id="loading" class="loading-invisible">
+                    <img src="./images/loading.gif" alt="Loading...">
+                </div>
+                <script type="text/javascript">
+                    document.getElementById("loading").className = "loading-visible";
+                    var hideDiv = function(){document.getElementById("loading").className = "loading-invisible";};
+                    var oldLoad = window.onload;
+                    var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
+                    window.onload = newLoad;
+                </script>
+
+                <!-- <canvas id="myCanvas" width=800 height=600></canvas> -->
+                <canvas id="myCanvas" width=1024 height=768></canvas>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
