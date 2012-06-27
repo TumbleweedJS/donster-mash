@@ -32,38 +32,3 @@ window.onload = function()
     }
     window.setTimeout(callback, 1000 / 30);
 }
-
-/** Key event listeners **/
-window.addEventListener('keydown', function MyOnKeyDown(event)
-{
-    var KeyID = event.keyCode;
-
-    //up arrow or spacebar
-    if (KeyID == 38 || KeyID == 32)
-    {
-        DonsterMashGame.SetUpPressed(true);
-    }
-    //right arrow or ctrl
-    if (KeyID == 39 || KeyID == 17)
-    {
-        DonsterMashGame.SetRightPressed(true);
-    }
-}, false);
-
-
-
-window.addEventListener('keyup', function MyOnKeyDown(event)
-{
-    var KeyID = event.keyCode;
-
-    //up arrow or spacebar
-    if (KeyID == 38 || KeyID == 32)
-    {
-        DonsterMashGame.SetUpPressed(false);
-    }
-    //right arrow or ctrl
-    if (KeyID == 39 || KeyID == 17)
-    {
-        DonsterMashGame.SetRightPressed(false);
-    }
-}, false);

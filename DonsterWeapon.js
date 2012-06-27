@@ -15,12 +15,13 @@ function DonsterWeapon(player)
     this.Height = 64;
     this.Sprite_idx = 0;
     this.ElapsedTime = 0;
-    this.TimeUpdate = 30;
+    this.TimeUpdate = 20;
     this.isShooting = false;
     this.x = 0;
     this.y = 0;
 
     this.Sprites = new Array();
+    this.Box = new CollisionBox(this.x, this.y, this.Width, this.Height);
     this.LoadSprites();
 }
 
@@ -78,6 +79,8 @@ DonsterWeapon.prototype.Update = function(GameTime)
     }
     this.x = this.Player.GetX() - 8;
     this.y = this.Player.GetY() - 20 - (this.Height / 2);
+    this.Box.setX(this.x);
+    this.Box.setY(this.y);
 }
 
 DonsterWeapon.prototype.draw = function(context, view, x_local, y_local)
@@ -87,6 +90,23 @@ DonsterWeapon.prototype.draw = function(context, view, x_local, y_local)
         this.Sprites[this.Sprite_idx].setX(this.x);
         this.Sprites[this.Sprite_idx].setY(this.y);
         this.Sprites[this.Sprite_idx].draw(context, view, x_local, y_local);
+        /** DEBUG **/
+        //points = new Text2D(this.Box.getX(), this.Box.getY(), 10, "Calibri", '@');
+        //points.setRVBColor(255, 0, 0);
+        //points.draw(context, view, x_local, y_local);
+
+        //points = new Text2D(this.Box.getX() +  this.Box.getWidth(), this.Box.getY(), 10, "Calibri", '@');
+        //points.setRVBColor(0, 255, 0);
+        //points.draw(context, view, x_local, y_local);
+
+        //points = new Text2D(this.Box.getX() + this.Box.getWidth(), this.Box.getY() + this.Box.getHeight(), 10, "Calibri", '@');
+        //points.setRVBColor(0, 0, 255);
+        //points.draw(context, view, x_local, y_local);
+
+        //points = new Text2D(this.Box.getX(), this.Box.getY() + this.Box.getHeight(), 10, "Calibri", '@');
+        //points.setRVBColor(255, 255, 255);
+        //points.draw(context, view, x_local, y_local);
+        /** DEBUG **/
     }
 }
 
@@ -108,4 +128,9 @@ DonsterWeapon.prototype.getWidth = function()
 DonsterWeapon.prototype.getHeight = function()
 {
     return this.Height;
+}
+
+DonsterWeapon.prototype.getBox = function()
+{
+    return this.Box;
 }

@@ -146,12 +146,12 @@ DonsterWall.prototype.AppendWallPart = function()
                 if (this.CurrentWalls.length > 10 && this.FakeRandom[pos][i] == WallMidIdx) /** Random monster pop **/
                 {
                     var popRand =  Math.floor(Math.random() * 100);
-                    if (popRand < 50)
+                    if (popRand < 10)
                     {
                         var newMonster = new DonsterMonster(this.Game, this.ImgMonster);
-                        if (popRand < 20)
+                        if (popRand < 5)
                         {
-                            newMonster.setDirection(DIR_LEFT);
+                            newMonster.changeDirection();
                         }
                         newMonster.setX(this.Begin + ((this.CurrentWalls.length - 1) * this.WallPartWidth));
                         this.Monsters.push(newMonster);
@@ -221,7 +221,22 @@ DonsterWall.prototype.UpdateMonster = function(GameTime, distMove)
             newX = this.Monsters[i].getX();
             newX += (-distMove + (monsterMove));
         }
-        newY = this.GetFloorYForX(this.Monsters[i].getX());
+        newY = this.GetFloorYForX(newX + (this.Monsters[i].getDirection() == DIR_LEFT ? 0 : this.Monsters[i].getWidth()));
+        if (newY != this.Monsters[i].getY())
+        {
+            this.Monsters[i].changeDirection();
+            if (this.Monsters[i].getDirection() == DIR_LEFT)
+            {
+                newX = this.Monsters[i].getX();
+                newX += (-distMove - (monsterMove));
+            }
+            else
+            {
+                newX = this.Monsters[i].getX();
+                newX += (-distMove + (monsterMove));
+            }
+            newY = this.GetFloorYForX(newX);
+        }
         this.Monsters[i].setX(newX);
         this.Monsters[i].setY(newY);
         this.Monsters[i].Update(GameTime);
@@ -293,7 +308,7 @@ DonsterWall.prototype.GetFloorYForX = function(x)
 
     for (i = 0; i < this.CurrentWalls.length; i++)
     {
-        if (x < (this.Begin + (i * this.WallPartWidth) + 64))
+        if (x < (this.Begin + ((i + 1) * this.WallPartWidth)))
         {
             break;
         }
@@ -329,24 +344,14 @@ DonsterWall.prototype.IsTouchingSpikes = function(player)
     return false;
 }
 
-DonsterWall.prototype.CheckCollisonShoot = function(x, y, w, h)
+DonsterWall.prototype.CheckCollisonShoot = function(weapon)
 {
     var i;
 
-    x += 20;
-    y += 10;
-    w -= 40;
-    h -= 20;
     for (i = 0; i < this.Monsters.length; i++)
     {
         var monster = this.Monsters[i];
-        if((monster.getX() > x + w)
-            || (monster.getX() + monster.getWidth() < x)
-            || (monster.getY() < y)
-            || (monster.getY() - monster.getHeight() > y + h))
-        {
-        }
-        else
+        if(weapon.getBox().isCollidingBox(monster.getBox()))
         {
             monster.Kill();
             this.DeadMonsters.push(monster);
@@ -356,28 +361,32 @@ DonsterWall.prototype.CheckCollisonShoot = function(x, y, w, h)
     }
 }
 
-DonsterWall.prototype.CheckCollisionPlayer = function(x, y, w, h)
+DonsterWall.prototype.CheckCollisionPlayer = function(player)
 {
     var i;
+    var ret = false;
 
-    x -= 10;
-    y -= 10;
-    w -= 20;
-    h -= 20;
     for (i = 0; i < this.Monsters.length; i++)
     {
         var monster = this.Monsters[i];
-        if((monster.getX() > x)
-            || (monster.getX() + monster.getWidth() < x - w)
-            || (monster.getY() < y)
-            || (monster.getY() - monster.getHeight() > y + h))
+        if(player.getBox().isCollidingBox(monster.getBox()))
         {
-        }
-        else
-        {
-            return true;
+            var yDiff = (player.getBox().getY() + player.getBox().getHeight()) -  monster.getBox().getY();
+            if (yDiff > 0 && yDiff < 30)
+            {
+                monster.Kill();
+                this.DeadMonsters.push(monster);
+                this.Monsters.splice(i, 1);
+                i--;
+                player.BounceMonster();
+            }
+            else
+            {
+                ret = true;
+            }
         }
     }
+    return ret;
 }
 
 DonsterWall.prototype.LoadFakeRandom = function()

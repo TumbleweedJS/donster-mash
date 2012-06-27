@@ -86,16 +86,50 @@ var EventManager = function()
 {
     //variables
     var keyDown = new Array();
+    var oldKeyDown = new Array();
+    var callBack = new Array();
 
     function Initialize()
     {
         window.onkeydown = UpdateDown;
+        window.onkeyup = UpdateUp;
         keyDown.length = 0;
+        callBack.length = 0;
+        oldKeyDown.length = 0;
     };
+
+    function addCallBack(fun)
+    {
+        callBack.push(fun);
+        return callBack.length;
+    };
+
+    function deleteCallBack(funId)
+    {
+        callBack.splice(funId, 1);
+    }
 
     function UpdateDown(event)
     {
+        UpdateArray();
+
+        for(var it = 0; it < keyDown.length; it++)
+        {
+            if (keyDown[it] == event.keyCode)
+                return;
+        }
         keyDown.push(event.keyCode);
+    };
+
+    function UpdateUp(event)
+    {
+        UpdateArray();
+
+        for(var it = 0; it < keyDown.length; it++)
+        {
+            if (keyDown[it] == event.keyCode)
+                keyDown.splice(it, 1);
+        }
     };
 
     function isKeyDown(keyCode)
@@ -108,21 +142,62 @@ var EventManager = function()
         return false;
     }
 
+    function isOldKeyDown(keyCode)
+    {
+        for(var it = 0; it < oldKeyDown.length; it++)
+        {
+            if (oldKeyDown[it] == keyCode)
+                return true;
+        }
+        return false;
+    }
+
     function isKeyUp(keyCode)
     {
         return !isKeyDown(keyCode);
     }
 
-    function Clear()
+    function isKeyPressed(keyCode)
     {
-        keyDown.length = 0;
+        if (this.isOldKeyDown(keyCode) && this.isKeyUp(keyCode))
+        {
+            for(var it = 0; it < oldKeyDown.length; it++)
+            {
+                if (oldKeyDown[it] == keyCode)
+                    oldKeyDown.splice(it, 1);
+            }
+            return true;
+        }
+        return false;
+    }
+
+    function Update()
+    {
+        for(var it = 0; it < callBack.length; it++)
+        {
+           callBack[it]();
+        }
     };
+
+    function UpdateArray()
+    {
+        oldKeyDown.length = 0;
+        for (var it = 0; it < keyDown.length; it++)
+            oldKeyDown.push(keyDown[it]);
+    }
 
     return function()
     {
         this.Initialize = Initialize;
-        this.Clear = Clear;
         this.isKeyDown = isKeyDown;
         this.isKeyUp = isKeyUp;
+        this.addCallBack = addCallBack;
+        this.deleteCallBack = deleteCallBack;
+        this.Update = Update;
+        this.isKeyPressed = isKeyPressed;
+        this.isOldKeyDown = isOldKeyDown;
+
+        this.keyDown = keyDown;
+        this.oldKeyDown = oldKeyDown;
     }
 }();

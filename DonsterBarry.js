@@ -16,7 +16,7 @@ function DonsterBarry(img, game, x, y)
     this.Height = 64;
     this.Velocity = 60;
     this.VelocityBlocked = false;
-    this.Jumper.Initialize(this.Velocity, 90, 20, 0.96);
+    this.Jumper.Initialize(this.Velocity, 90, 18, 0.96);
     this.Jumper.SetNbJump(1);
     this.Jumper.SetScaleMove(1);
     this.Game = game;
@@ -31,6 +31,9 @@ function DonsterBarry(img, game, x, y)
     this.ElapsedTime_sprite = 0;
     this.ElapsedTime_move = 0;
     this.JumpBeginY = 0;
+    this.TimeBetweenShoot = 250;
+    this.TimerShootWait = 0;
+    this.Box = new CollisionBox(this.x - this.Width, this.y - this.Height, this.Width - 12, this.Height);
     this.LoadSprites();
 }
 
@@ -60,6 +63,7 @@ DonsterBarry.prototype.Update = function(GameTime)
     this.ElapsedTime_move += GameTime.GetElapsedTime();
     this.ElapsedTime_sprite += GameTime.GetElapsedTime();
     this.Timer.reset();
+    this.TimerShootWait -= GameTime.GetElapsedTime();
 
     /** Sprite Update**/
     if (this.ElapsedTime_sprite > this.time_sprite_update)
@@ -88,6 +92,8 @@ DonsterBarry.prototype.Update = function(GameTime)
     }
     /** Weapon update **/
     this.Weapon.Update(GameTime);
+    this.Box.setX(this.x - this.Width + 5);
+    this.Box.setY(this.y - this.Height);
 }
 
 DonsterBarry.prototype.draw = function(context, view, x_local, y_local)
@@ -96,6 +102,24 @@ DonsterBarry.prototype.draw = function(context, view, x_local, y_local)
     this.sprites[this.sprite_type][this.sprite_idx].setY(this.y);
     this.sprites[this.sprite_type][this.sprite_idx].draw(context, view, x_local, y_local);
     this.Weapon.draw(context, view, x_local, y_local);
+
+    /** DEBUG **/
+    //points = new Text2D(this.Box.getX(), this.Box.getY(), 15, "Calibri", '#');
+    //points.setRVBColor(255, 0, 0);
+    //points.draw(context, view, x_local, y_local);
+
+    //points = new Text2D(this.Box.getX() +  this.Box.getWidth(), this.Box.getY(), 15, "Calibri", '#');
+    //points.setRVBColor(0, 255, 0);
+    //points.draw(context, view, x_local, y_local);
+
+    //points = new Text2D(this.Box.getX() + this.Box.getWidth(), this.Box.getY() + this.Box.getHeight(), 15, "Calibri", '#');
+    //points.setRVBColor(0, 0, 255);
+    //points.draw(context, view, x_local, y_local);
+
+    //points = new Text2D(this.Box.getX(), this.Box.getY() + this.Box.getHeight(), 15, "Calibri", '#');
+    //points.setRVBColor(255, 255, 255);
+    //points.draw(context, view, x_local, y_local);
+    /** DEBUG **/
 }
 
 DonsterBarry.prototype.HandleTouches = function(upPressed, rightPressed)
@@ -109,7 +133,7 @@ DonsterBarry.prototype.HandleTouches = function(upPressed, rightPressed)
     {
         if (this.Jumper.IsJumping())
         {
-            if (this.VelocityBlocked == false && this.Jumper.GetVelocity() < 115)
+            if (this.VelocityBlocked == false && this.Jumper.GetVelocity() < 110)
             {
                 this.Jumper.SetVelocity(this.Jumper.GetVelocity() + 5);
             }
@@ -126,8 +150,9 @@ DonsterBarry.prototype.HandleTouches = function(upPressed, rightPressed)
         }
     }
     /** Fire **/
-    if (rightPressed == true && this.Weapon.IsShooting() == false)
+    if (rightPressed == true && this.Weapon.IsShooting() == false && this.TimerShootWait <= 0)
     {
+        this.TimerShootWait = this.TimeBetweenShoot;
         GlobalSoundManager.getPlayableSound(1).play();
         this.Weapon.Shoot();
         this.sprite_idx = 0;
@@ -213,4 +238,18 @@ DonsterBarry.prototype.getY = function()
 DonsterBarry.prototype.getWeapon = function()
 {
     return this.Weapon;
+}
+
+DonsterBarry.prototype.getBox = function()
+{
+    return this.Box;
+}
+
+DonsterBarry.prototype.BounceMonster = function()
+{
+    this.Jumper.SetVelocity(60);
+    this.Jumper.Stop();
+    this.Jumper.Start(new DonsterPair(this.x, this.y));
+    this.VelocityBlocked = false;
+    this.JumpBeginY = this.y + 100;
 }

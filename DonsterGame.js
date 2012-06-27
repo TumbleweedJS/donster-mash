@@ -17,8 +17,8 @@ function DonsterGame(width, height)
     this.Width = width;
     this.Height = height;
     this.HurtTime = 0;
-    this.Velocity = 1.5; // 1 is a good value
-    this.Speed = 120;
+    this.Velocity = 1.2; // 1 is a good value
+    this.Speed = 100;
     this.UpPressed = false;
     this.RightPressed = false;
     this.GameTime = new MonsterTimer();
@@ -135,6 +135,7 @@ DonsterGame.prototype.LoadResources = function()
 
 DonsterGame.prototype.Update = function()
 {
+    this.EventManager.Update();
     this.FpsAccu += this.GameTime.GetElapsedTime();
     if (this.FpsAccu > this.FpsUpdate)
     {
@@ -148,11 +149,13 @@ DonsterGame.prototype.Update = function()
     this.Player.Update(this.GameTime);
     this.LifeBar.Update(this.GameTime);
 
-    this.Player.HandleTouches(this.UpPressed, this.RightPressed);
-    //this.Player.HandleTouches(
-    //    this.EventManager.isKeyDown(KeyEnum.UpArrow),
-    //    this.EventManager.isKeyDown(KeyEnum.RightArrow)
-    //    );
+    //this.Player.HandleTouches(this.UpPressed, this.RightPressed);
+    this.SetUpPressed(this.EventManager.isKeyDown(KeyEnum.UpArrow) || this.EventManager.isKeyDown(KeyEnum.UpArrow))
+    this.SetRightPressed(this.EventManager.isKeyDown(KeyEnum.RightArrow));
+    this.Player.HandleTouches(
+        this.EventManager.isKeyDown(KeyEnum.UpArrow) || this.EventManager.isKeyDown(KeyEnum.UpArrow),
+        this.EventManager.isKeyDown(KeyEnum.RightArrow)
+        );
 
     this.ControlCollisions();
     this.UpdateScore(this.GameTime);
@@ -167,7 +170,6 @@ DonsterGame.prototype.Update = function()
     this.SpriteShadow.setY(this.Walls.GetFloorYForX(this.SpriteShadow.getX()));
 
     this.GameTime.reset();
-    this.EventManager.Clear();
 }
 
 DonsterGame.prototype.draw = function(context, view, x_local, y_local)
@@ -192,7 +194,7 @@ DonsterGame.prototype.draw = function(context, view, x_local, y_local)
 DonsterGame.prototype.ControlCollisions = function()
 {
     /** Fall check **/
-    var tmpY = this.Walls.GetFloorYForX(this.Player.GetX() - 64); // (-64) pour le decalage avec les plateformes Begin et End
+    var tmpY = this.Walls.GetFloorYForX(this.Player.getBox().getX() + this.Player.getBox().getWidth());
 
     if (this.Player.GetY() > tmpY)
     {
@@ -219,20 +221,23 @@ DonsterGame.prototype.ControlCollisions = function()
     /** Weapon shoot monster check **/
     if (this.Player.getWeapon().IsShooting())
     {
-        this.Walls.CheckCollisonShoot(this.Player.getWeapon().getX(), this.Player.getWeapon().getY(), this.Player.getWeapon().getWidth(), this.Player.getWeapon().getHeight());
+        this.Walls.CheckCollisonShoot(this.Player.getWeapon());
     }
     /** Player hurt monster check **/
-    if (this.Walls.CheckCollisionPlayer(this.Player.GetX(), this.Player.GetY(), this.Player.GetWidth(), this.Player.GetHeight()))
+    if (this.Walls.CheckCollisionPlayer(this.Player))
     {
-        this.HurtTime = 150;
-        this.LifeBar.RemoveLife();
-        this.Player.SpikeHurt();
+        if (!this.Player.IsInvincible())
+        {
+            this.HurtTime = 150;
+            this.LifeBar.RemoveLife();
+            this.Player.SpikeHurt();
+        }
     }
 }
 
 DonsterGame.prototype.UpdateScore = function(GameTime)
 {
-    this.Score += (this.Speed * GameTime.GetElapsedTime() / 9000);
+    this.Score += (this.Speed * GameTime.GetElapsedTime() / 5000);
 }
 
 DonsterGame.prototype.GetSpeed = function()
