@@ -56,9 +56,22 @@ function DonsterGame(width, height)
     this.HurtBot = new Sprite(0, 768, 1024, 384, tmpRec);
     this.HurtBot.setScale(1, -1);
     this.HurtBot.setAlpha(0.6);
+}
 
+DonsterGame.prototype.NewGame = function()
+{
+    this.Speed = 100;
+    this.UpPressed = false;
+    this.RightPressed = false;
+    this.Score = 0;
+    this.GameTime.reset();
+    this.HurtTime = 0;
+    this.Player = new DonsterBarry(this.img_player_spritesheet, this, 256, 348);
+    this.Walls = new DonsterWall(this, this.ImgWalls, this.img_spikes, this.img_monster, new DonsterLife(this.img_life, this.img_life_grey, this.img_life_regen, this.img_life_pickup, this.img_life_explode, ModePickup));
+    this.LifeBar = new DonsterLifeBar(this, 38, this.img_life, this.img_life_grey, this.img_life_regen, this.img_life_pickup, this.img_life_explode, 3);
     GlobalSoundManager.getPlayableSound(5).play();
 }
+
 
 DonsterGame.prototype.LoadResources = function()
 {
@@ -198,6 +211,12 @@ DonsterGame.prototype.ControlCollisions = function()
 
     if (this.Player.GetY() > tmpY)
     {
+        /** Check death **/
+        var begY = this.Walls.GetFloorYForX(this.Player.getBox().getX());
+        if (begY >= this.Height && this.Player.GetY() - tmpY > 20)
+        {
+            this.LifeBar.Lifes = 0;
+        }
         this.Player.StopInfJump(tmpY);
     }
     if (this.Player.GetY() < tmpY && !this.Player.IsJumping())
@@ -301,4 +320,9 @@ DonsterGame.prototype.getWidth = function()
 DonsterGame.prototype.getHeight = function()
 {
     return this.Height;
+}
+
+DonsterGame.prototype.isLost = function()
+{
+    return (this.LifeBar.GetLifes() <= 0);
 }
