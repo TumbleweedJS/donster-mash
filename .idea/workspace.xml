@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35b56065-0615-4d05-8981-547b1d743290" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/barryresultshd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btnback.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btnbackpress.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btnnewgame.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btnnewgamepress.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/menubg_snow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/resultsbox.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/scoreboardhd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/title_monsterdashhd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DonsterButton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DonsterGameOver.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DonsterMenu.js" />
-      <change type="DELETED" beforePath="A:\Users\Fabrice\Workspace\donster_mash\framework\event.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DonsterScoreBoard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/Event.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterGame.js" afterPath="$PROJECT_DIR$/DonsterGame.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterGameOver.js" afterPath="$PROJECT_DIR$/DonsterGameOver.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.js" afterPath="$PROJECT_DIR$/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/Window.js" afterPath="$PROJECT_DIR$/framework/Window.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="TumbleweedPrototype.iws" />
@@ -40,30 +29,7 @@
     <favorites_list name="TumbleweedPrototype" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DonsterButton.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DonsterButton.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="8" selection-start="991" selection-end="991" vertical-scroll-proportion="0.47640118">
-              <folding>
-                <element signature="n#!!doc;n#DonsterButton#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="32" selection-start="2144" selection-end="2144" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -76,8 +42,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/DonsterLifeBar.js" />
-        <option value="$PROJECT_DIR$/DonsterParallax.js" />
         <option value="$PROJECT_DIR$/framework/View.js" />
         <option value="$PROJECT_DIR$/framework/Text2D.js" />
         <option value="$PROJECT_DIR$/DonsterWall.js" />
@@ -86,12 +50,14 @@
         <option value="$PROJECT_DIR$/DonsterBarry.js" />
         <option value="$PROJECT_DIR$/framework/Window.js" />
         <option value="$PROJECT_DIR$/main.css" />
-        <option value="$PROJECT_DIR$/DonsterGame.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/Main.js" />
-        <option value="$PROJECT_DIR$/DonsterGameOver.js" />
         <option value="$PROJECT_DIR$/DonsterMenu.js" />
         <option value="$PROJECT_DIR$/DonsterButton.js" />
+        <option value="$PROJECT_DIR$/ScoreBoard.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/DonsterGame.js" />
+        <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/DonsterGameOver.js" />
+        <option value="$PROJECT_DIR$/DonsterScoreBoard.js" />
       </list>
     </option>
   </component>
@@ -171,6 +137,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TumbleweedPrototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="donster_mash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -186,8 +166,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="A:\Users\Fabrice\Workspace\donster_mash\images" />
       <recent name="A:\Users\Fabrice\Workspace\donster_mash\framework" />
+      <recent name="A:\Users\Fabrice\Workspace\donster_mash\images" />
       <recent name="A:\Users\Fabrice\Workspace\TumbleweedPrototype\framework" />
       <recent name="A:\Users\Fabrice\Workspace\TumbleweedPrototype\images" />
       <recent name="A:\Users\Fabrice\Workspace\TumbleweedPrototype\sounds" />
@@ -274,7 +254,11 @@
       <created>1340810157444</created>
       <updated>1340810157444</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added : menu + gameover &#10;Missing : Scoreboard">
+      <created>1340900095241</created>
+      <updated>1340900095241</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -306,7 +290,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15147857" sideWeight="0.8025114" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3413242" sideWeight="0.9990732" order="7" side_tool="false" content_ui="tabs" x="11" y="426" width="1657" height="167" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17465754" sideWeight="0.9990732" order="7" side_tool="false" content_ui="tabs" x="11" y="426" width="1657" height="167" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14725408" sideWeight="0.1849315" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -378,20 +362,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DonsterJump.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.22566372">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterLife.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="55" selection-start="1294" selection-end="1322" vertical-scroll-proportion="0.17551622">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/CollisionBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -435,11 +405,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterWall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="317" column="65" selection-start="10334" selection-end="10348" vertical-scroll-proportion="6.368522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="26" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.12898937">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="71" selection-start="1372" selection-end="1403" vertical-scroll-proportion="0.3480826">
+          <folding>
+            <element signature="n#!!doc;n#DonsterButton#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterDistanceCounter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="1" selection-start="160" selection-end="1880" vertical-scroll-proportion="0.9498525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="37" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.69961977">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/Event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DonsterGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="18" selection-start="8580" selection-end="8580" vertical-scroll-proportion="0.5201535">
+        <state line="331" column="22" selection-start="10988" selection-end="10988" vertical-scroll-proportion="0.9255474">
           <folding>
-            <element signature="n#!!block;n#DonsterGame#0" expanded="false" />
             <element signature="e#2356#3015#0" expanded="false" />
             <element signature="e#3067#5779#0" expanded="false" />
             <element signature="e#5823#7298#0" expanded="false" />
@@ -460,49 +473,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterWall.js">
+    <entry file="file://$PROJECT_DIR$/DonsterGameOver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="65" selection-start="10334" selection-end="10348" vertical-scroll-proportion="6.368522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="35" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.6354344">
+        <state line="35" column="42" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.8524355">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="32" selection-start="2144" selection-end="2144" vertical-scroll-proportion="0.0">
+        <state line="38" column="0" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.5358166">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterGameOver.js">
+    <entry file="file://$PROJECT_DIR$/framework/Text2D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="31" selection-start="1999" selection-end="2009" vertical-scroll-proportion="0.7513298">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="26" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.12898937">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="8" selection-start="991" selection-end="991" vertical-scroll-proportion="0.47640118">
+        <state line="25" column="69" selection-start="901" selection-end="905" vertical-scroll-proportion="0.6315007">
           <folding>
-            <element signature="n#!!doc;n#DonsterButton#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterScoreBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="1" selection-start="207" selection-end="207" vertical-scroll-proportion="0.2191977">
+          <folding />
         </state>
       </provider>
     </entry>

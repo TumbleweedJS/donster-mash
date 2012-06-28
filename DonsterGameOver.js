@@ -17,6 +17,7 @@ function DonsterGameOver(width, height)
     this.BtnBack = new DonsterButton(10, height - 40, 128, 32, this.img_btn_back, this.img_btn_back_pressed);
     this.EventManager = new EventManager();
     this.EventManager.Initialize();
+    this.ScoreBoard = new DonsterScoreBoard(this.img_score_background, this.img_scoreboard);
 }
 
 DonsterGameOver.prototype.LoadResources = function()
@@ -32,6 +33,11 @@ DonsterGameOver.prototype.LoadResources = function()
     this.img_title = new Image();
     this.img_title.src = 'images/title_monsterdashhd.png';
 
+    this.img_score_background = new Image();
+    this.img_score_background.src = 'images/resultsbox.png';
+    this.img_scoreboard = new Image();
+    this.img_scoreboard.src = 'images/scoreboardhd.png';
+
     tmpRec = new ImageRect(this.img_bg, 0, 0, 512, 512);
     this.MenuBackgroung = new Sprite(0, 0, this.Width, this.Height, tmpRec);
 }
@@ -43,7 +49,7 @@ DonsterGameOver.prototype.Update = function()
     {
         var mpos = this.EventManager.getMousePosition();
         //this.BtnBack.HandleClick(mpos[0], mpos[1]);
-        this.BtnBack.HandleClick(50, mpos[1] - 50);
+        this.BtnBack.HandleClick(20, mpos[1] - 70);
     }
 }
 
@@ -51,6 +57,7 @@ DonsterGameOver.prototype.draw = function(context, view, x_local, y_local)
 {
     this.MenuBackgroung.draw(context, view, x_local, y_local);
     this.BtnBack.draw(context, view, x_local, y_local);
+    this.ScoreBoard.draw(context, view, x_local, y_local);
 }
 
 DonsterGameOver.prototype.getX = function()
@@ -80,4 +87,9 @@ DonsterGameOver.prototype.isBackPressed = function()
         return true;
     }
     return false;
+}
+
+DonsterGameOver.prototype.setScore = function(score)
+{
+    this.ScoreBoard.SetDistance(score);
 }

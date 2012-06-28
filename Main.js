@@ -31,7 +31,7 @@ window.onload = function()
     viewEnd.pushSprite(DonsterMashGameOver);
 
    // my_window.setScale(0.78, 0.79);
-    changeMode(MODE_MENU);
+    changeMode(MODE_END);
     function loop()
     {
         context.fillStyle = "rgb(0, 0, 0)";
@@ -54,6 +54,7 @@ window.onload = function()
             DonsterMashGame.Update();
             if (DonsterMashGame.isLost())
             {
+                DonsterMashGameOver.setScore(DonsterMashGame.getScore());
                 changeMode(MODE_END);
             }
             /** Draw **/

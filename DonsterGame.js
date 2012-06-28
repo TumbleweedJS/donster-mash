@@ -326,3 +326,8 @@ DonsterGame.prototype.isLost = function()
 {
     return (this.LifeBar.GetLifes() <= 0);
 }
+
+DonsterGame.prototype.getScore = function()
+{
+    return this.Score;
+}
