@@ -44,8 +44,9 @@ DonsterMenu.prototype.Update = function()
     if (this.EventManager.isMouseButtonDown(MouseEnum.Left))
     {
         var mpos = this.EventManager.getMousePosition();
-        //this.BtnPlay.HandleClick(mpos[0], mpos[1]);
-        this.BtnPlay.HandleClick(980, mpos[1] - 50);
+        var docX = document.getElementById("myCanvas").offsetLeft;
+        var docY = document.getElementById("myCanvas").offsetTop;
+        this.BtnPlay.HandleClick((mpos[0] - docX) / GLOB_REDUC_WIDTH, (mpos[1] - docY) / GLOB_REDUC_HEIGHT);
     }
 }
 

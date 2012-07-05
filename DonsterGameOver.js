@@ -14,10 +14,10 @@ function DonsterGameOver(width, height)
     this.Height = height;
     this.GameTime = new MonsterTimer();
     this.LoadResources();
-    this.BtnBack = new DonsterButton(10, height - 40, 128, 32, this.img_btn_back, this.img_btn_back_pressed);
+    this.BtnBack = new DonsterButton(10, height - 60, 128, 32, this.img_btn_back, this.img_btn_back_pressed);
     this.EventManager = new EventManager();
     this.EventManager.Initialize();
-    this.ScoreBoard = new DonsterScoreBoard(this.img_score_background, this.img_scoreboard);
+    this.ScoreBoard = new DonsterScoreBoard(this.img_score_background, this.img_scoreboard, width - 200);
 }
 
 DonsterGameOver.prototype.LoadResources = function()
@@ -48,8 +48,9 @@ DonsterGameOver.prototype.Update = function()
     if (this.EventManager.isMouseButtonDown(MouseEnum.Left))
     {
         var mpos = this.EventManager.getMousePosition();
-        //this.BtnBack.HandleClick(mpos[0], mpos[1]);
-        this.BtnBack.HandleClick(20, mpos[1] - 70);
+        var docX = document.getElementById("myCanvas").offsetLeft
+        var docY = document.getElementById("myCanvas").offsetTop;
+        this.BtnBack.HandleClick((mpos[0] - docX) / GLOB_REDUC_WIDTH, (mpos[1] - docY) / GLOB_REDUC_HEIGHT);
     }
 }
 

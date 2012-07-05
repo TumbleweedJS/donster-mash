@@ -6,24 +6,25 @@
  * To change this template use File | Settings | File Templates.
  */
 
-function DonsterScoreBoard(img_bg, img_sheet)
+function DonsterScoreBoard(img_bg, img_sheet, width)
 {
     var tmpRec;
     this.Distance = 0;
     this.Img = img_sheet;
     this.ImgBackground = img_bg;
     tmpRec = new ImageRect(img_bg, 0, 0, 256, 256);
-    this.Background = new Sprite(100, 100, 800, 256, tmpRec);
-    this.TextYouRan = new Text2D(140, 250, 66, 'Calibri', 'You ran');
+    this.Background = new Sprite(100, 100, width, 256, tmpRec);
+    this.TextYouRan = new Text2D(140, 250, 44, 'Calibri', 'You ran');
     this.TextYouRan.setRVBColor(255, 255, 255);
     this.TextYouRan.setFontStyle("bold");
     this.Numbers = new Array();
-    this.Width = 64;
-    this.Height = 128;
-    this.Marge = 18;
+    this.Multiplier = width / 850;
+    this.Width = 64 * this.Multiplier;
+    this.Height = 128 * this.Multiplier;
+    this.Marge = 18 * this.Multiplier;
     this.IdMetre = 10;
     this.IdKilometre = 11;
-    this.BeginRight = 850;
+    this.BeginRight = width + 80;
     this.LoadNumbers();
 }
 
@@ -33,8 +34,8 @@ DonsterScoreBoard.prototype.LoadNumbers = function()
 
     for (i = 0; i < 16; i++)
     {
-        var tmpRec = new ImageRect(this.Img, (i * this.Width), 0, this.Width, this.Height);
-        this.Numbers.push(new Sprite(0, 165, this.Width, this.Height, tmpRec));
+        var tmpRec = new ImageRect(this.Img, (i * 64), 0, 64, 128);
+        this.Numbers.push(new Sprite(0, 228 - (this.Height / 2), this.Width, this.Height, tmpRec));
     }
 }
 

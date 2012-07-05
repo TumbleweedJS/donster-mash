@@ -162,12 +162,9 @@ DonsterGame.prototype.Update = function()
     this.Player.Update(this.GameTime);
     this.LifeBar.Update(this.GameTime);
 
-    //this.Player.HandleTouches(this.UpPressed, this.RightPressed);
-    this.SetUpPressed(this.EventManager.isKeyDown(KeyEnum.UpArrow) || this.EventManager.isKeyDown(KeyEnum.UpArrow))
-    this.SetRightPressed(this.EventManager.isKeyDown(KeyEnum.RightArrow));
     this.Player.HandleTouches(
-        this.EventManager.isKeyDown(KeyEnum.UpArrow) || this.EventManager.isKeyDown(KeyEnum.UpArrow),
-        this.EventManager.isKeyDown(KeyEnum.RightArrow)
+        this.EventManager.isKeyDown(KeyEnum.UpArrow) || this.EventManager.isKeyDown(KeyEnum.Space),
+        this.EventManager.isKeyDown(KeyEnum.RightArrow || this.EventManager.isKeyDown(KeyEnum.Ctrl))
         );
 
     this.ControlCollisions();
