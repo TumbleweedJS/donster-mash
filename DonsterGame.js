@@ -330,7 +330,12 @@ DonsterGame.prototype.getHeight = function()
 
 DonsterGame.prototype.isLost = function()
 {
-    return (this.LifeBar.GetLifes() <= 0);
+    if (this.LifeBar.GetLifes() <= 0)
+    {
+        GlobalSoundManager.setMasterVolume(0);
+        return true;
+    }
+    return false;
 }
 
 DonsterGame.prototype.getScore = function()
