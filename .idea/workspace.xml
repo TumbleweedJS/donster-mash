@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35b56065-0615-4d05-8981-547b1d743290" name="Default" comment="Last modifications - Game size is now linked to canvas size">
+    <list default="true" id="35b56065-0615-4d05-8981-547b1d743290" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btn-sound-mute-pressed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btn-sound-mute.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btn-sound-pressed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/btn-sound.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterGame.js" afterPath="$PROJECT_DIR$/DonsterGame.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterGameOver.js" afterPath="$PROJECT_DIR$/DonsterGameOver.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterMenu.js" afterPath="$PROJECT_DIR$/DonsterMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterScoreBoard.js" afterPath="$PROJECT_DIR$/DonsterScoreBoard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.js" afterPath="$PROJECT_DIR$/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.css" afterPath="$PROJECT_DIR$/main.css" />
     </list>
     <ignored path="TumbleweedPrototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +30,35 @@
     <favorites_list name="TumbleweedPrototype" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="32" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="0" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="24" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.4778761">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -52,13 +80,13 @@
         <option value="$PROJECT_DIR$/ScoreBoard.js" />
         <option value="$PROJECT_DIR$/DonsterScoreBoard.js" />
         <option value="$PROJECT_DIR$/DonsterButton.js" />
-        <option value="$PROJECT_DIR$/DonsterMenu.js" />
         <option value="$PROJECT_DIR$/DonsterGameOver.js" />
-        <option value="$PROJECT_DIR$/DonsterGame.js" />
         <option value="$PROJECT_DIR$/DonsterSliderResize.js" />
-        <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/DonsterMenu.js" />
+        <option value="$PROJECT_DIR$/DonsterGame.js" />
         <option value="$PROJECT_DIR$/main.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/Main.js" />
       </list>
     </option>
   </component>
@@ -153,8 +181,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="A:\Users\Fabrice\Workspace\donster_mash\framework" />
       <recent name="A:\Users\Fabrice\Workspace\donster_mash\images" />
+      <recent name="A:\Users\Fabrice\Workspace\donster_mash\framework" />
       <recent name="A:\Users\Fabrice\Workspace\TumbleweedPrototype\framework" />
       <recent name="A:\Users\Fabrice\Workspace\TumbleweedPrototype\images" />
       <recent name="A:\Users\Fabrice\Workspace\TumbleweedPrototype\sounds" />
@@ -253,10 +281,14 @@
       <created>1340902200809</created>
       <updated>1340902200809</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Last modifications - Game size is now linked to canvas size">
+      <created>1341521516657</created>
+      <updated>1341521516657</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="3">
+  <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -282,7 +314,6 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19748859" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15147857" sideWeight="0.8025114" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17237443" sideWeight="0.9990732" order="7" side_tool="false" content_ui="tabs" x="11" y="426" width="1657" height="167" />
@@ -294,6 +325,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -337,7 +369,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added : menu modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last modifications - Game size is now linked to canvas size" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -354,16 +386,12 @@
     <MESSAGE value="Added : menu + gameover &#10;Missing : Scoreboard" />
     <MESSAGE value="Added : Game over scoreboard&#10;" />
     <MESSAGE value="Added : menu modification" />
+    <MESSAGE value="Last modifications - Game size is now linked to canvas size" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/framework/Sprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/Window.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="149" column="32" selection-start="3640" selection-end="3640" vertical-scroll-proportion="1.2467742" />
@@ -391,65 +419,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DonsterScoreBoard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="857" selection-end="857" vertical-scroll-proportion="0.13556619">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="35" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="20" selection-start="1610" selection-end="1610" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="26" column="32" selection-start="857" selection-end="857" vertical-scroll-proportion="0.13556619" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DonsterGameOver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="52" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="16" column="52" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yuidoc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/btn-sound-mute-pressed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="1" selection-start="523" selection-end="523" vertical-scroll-proportion="0.55857146" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="34" selection-start="3781" selection-end="3793" vertical-scroll-proportion="0.8542857" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DonsterGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="30" selection-start="6399" selection-end="6399" vertical-scroll-proportion="3.326969">
-          <folding />
-        </state>
+        <state line="76" column="5" selection-start="3070" selection-end="3070" vertical-scroll-proportion="0.34643376" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="699" selection-end="699" vertical-scroll-proportion="0.47943595">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="38" column="32" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="0" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.880141">
-          <folding />
-        </state>
+        <state line="90" column="0" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="32" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.36121213">
+        <state line="79" column="24" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.4778761">
           <folding />
         </state>
       </provider>

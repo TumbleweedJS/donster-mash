@@ -58,7 +58,7 @@ function DonsterGame(width, height)
     this.HurtBot.setAlpha(0.6);
 }
 
-DonsterGame.prototype.NewGame = function()
+DonsterGame.prototype.NewGame = function(isSoundMuted)
 {
     this.Speed = 100;
     this.UpPressed = false;
@@ -69,7 +69,16 @@ DonsterGame.prototype.NewGame = function()
     this.Player = new DonsterBarry(this.img_player_spritesheet, this, 256, 348);
     this.Walls = new DonsterWall(this, this.ImgWalls, this.img_spikes, this.img_monster, new DonsterLife(this.img_life, this.img_life_grey, this.img_life_regen, this.img_life_pickup, this.img_life_explode, ModePickup));
     this.LifeBar = new DonsterLifeBar(this, 38, this.img_life, this.img_life_grey, this.img_life_regen, this.img_life_pickup, this.img_life_explode, 3);
-    GlobalSoundManager.getPlayableSound(5).play();
+    if (isSoundMuted)
+    {
+        GlobalSoundManager.setMasterVolume(0);
+    }
+    else
+    {
+        GlobalSoundManager.setMasterVolume(0.2);
+        GlobalSoundManager.getPlayableSound(5).stop();
+        GlobalSoundManager.getPlayableSound(5).play();
+    }
 }
 
 

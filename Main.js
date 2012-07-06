@@ -51,7 +51,7 @@ window.onload = function()
             DonsterMashMenu.Update();
             if (DonsterMashMenu.isNewGamePressed())
             {
-                DonsterMashGame.NewGame();
+                DonsterMashGame.NewGame(DonsterMashMenu.IsSoundMuted());
                 changeMode(MODE_GAME);
             }
             /** Draw **/
