@@ -63,6 +63,7 @@ window.onload = function()
             DonsterMashGame.Update();
             if (DonsterMashGame.isLost())
             {
+                DonsterMashGame.stopAllSounds();
                 DonsterMashGameOver.setScore(DonsterMashGame.getScore());
                 changeMode(MODE_END);
             }

@@ -1,4 +1,4 @@
-TWSoundManager = {
+    TWSoundManager = {
     instances : null,
 
     length: 0,

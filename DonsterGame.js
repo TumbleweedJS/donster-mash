@@ -76,7 +76,6 @@ DonsterGame.prototype.NewGame = function(isSoundMuted)
     else
     {
         GlobalSoundManager.setMasterVolume(0.2);
-        GlobalSoundManager.getPlayableSound(5).stop();
         GlobalSoundManager.getPlayableSound(5).play();
     }
 }
@@ -171,9 +170,11 @@ DonsterGame.prototype.Update = function()
     this.Player.Update(this.GameTime);
     this.LifeBar.Update(this.GameTime);
 
+    this.SetUpPressed(this.EventManager.isKeyDown(KeyEnum.UpArrow) || this.EventManager.isKeyDown(KeyEnum.Space));
+    this.SetRightPressed(this.EventManager.isKeyDown(KeyEnum.RightArrow) || this.EventManager.isKeyDown(KeyEnum.Ctrl));
     this.Player.HandleTouches(
-        this.EventManager.isKeyDown(KeyEnum.UpArrow) || this.EventManager.isKeyDown(KeyEnum.Space),
-        this.EventManager.isKeyDown(KeyEnum.RightArrow || this.EventManager.isKeyDown(KeyEnum.Ctrl))
+        this.GetUpPressed(),
+        this.GetRightPressed()
         );
 
     this.ControlCollisions();
@@ -289,7 +290,7 @@ DonsterGame.prototype.SetUpPressed = function(value)
 {
     if (value == true && this.SpriteJumpHelp.getAlpha() > 0)
     {
-        this.SpriteJumpHelp.setAlpha(this.SpriteJumpHelp.getAlpha() - 0.05);
+        this.SpriteJumpHelp.setAlpha(this.SpriteJumpHelp.getAlpha() - 0.01);
     }
     this.UpPressed = value;
 }
@@ -303,7 +304,7 @@ DonsterGame.prototype.SetRightPressed = function(value)
 {
     if (value == true && this.SpriteShootHelp.getAlpha() > 0)
     {
-        this.SpriteShootHelp.setAlpha(this.SpriteShootHelp.getAlpha() - 0.05);
+        this.SpriteShootHelp.setAlpha(this.SpriteShootHelp.getAlpha() - 0.01);
     }
     this.RightPressed = value;
 }
@@ -332,7 +333,6 @@ DonsterGame.prototype.isLost = function()
 {
     if (this.LifeBar.GetLifes() <= 0)
     {
-        GlobalSoundManager.setMasterVolume(0);
         return true;
     }
     return false;
@@ -341,4 +341,9 @@ DonsterGame.prototype.isLost = function()
 DonsterGame.prototype.getScore = function()
 {
     return this.Score;
+}
+
+DonsterGame.prototype.stopAllSounds = function()
+{
+    GlobalSoundManager.tellAllInstances("stop");
 }

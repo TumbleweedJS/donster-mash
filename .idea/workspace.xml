@@ -4,6 +4,9 @@
     <list default="true" id="35b56065-0615-4d05-8981-547b1d743290" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterGame.js" afterPath="$PROJECT_DIR$/DonsterGame.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DonsterMenu.js" afterPath="$PROJECT_DIR$/DonsterMenu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.js" afterPath="$PROJECT_DIR$/Main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/TWSoundManager.js" afterPath="$PROJECT_DIR$/framework/TWSoundManager.js" />
     </list>
     <ignored path="TumbleweedPrototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,16 +31,7 @@
       <file leaf-file-name="DonsterGame.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DonsterGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="334" column="46" selection-start="10970" selection-end="10970" vertical-scroll-proportion="0.87218046">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="24" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0">
+            <state line="314" column="1" selection-start="10668" selection-end="10668" vertical-scroll-proportion="0.8880995">
               <folding />
             </state>
           </provider>
@@ -56,7 +50,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/framework/Text2D.js" />
         <option value="$PROJECT_DIR$/DonsterWall.js" />
         <option value="$PROJECT_DIR$/DonsterMonster.js" />
         <option value="$PROJECT_DIR$/DonsterWeapon.js" />
@@ -67,10 +60,11 @@
         <option value="$PROJECT_DIR$/DonsterButton.js" />
         <option value="$PROJECT_DIR$/DonsterGameOver.js" />
         <option value="$PROJECT_DIR$/DonsterSliderResize.js" />
-        <option value="$PROJECT_DIR$/DonsterMenu.js" />
         <option value="$PROJECT_DIR$/main.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/framework/TWSoundManager.js" />
+        <option value="$PROJECT_DIR$/DonsterMenu.js" />
         <option value="$PROJECT_DIR$/DonsterGame.js" />
       </list>
     </option>
@@ -158,11 +152,11 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -274,7 +268,11 @@
       <created>1341599896126</created>
       <updated>1341599896126</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Now sound stops when game is over">
+      <created>1341600194350</created>
+      <updated>1341600194350</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -299,12 +297,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19748859" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31392694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15147857" sideWeight="0.8025114" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15147857" sideWeight="0.68607306" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17237443" sideWeight="0.9990732" order="7" side_tool="false" content_ui="tabs" x="11" y="426" width="1657" height="167" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14725408" sideWeight="0.1849315" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -358,7 +356,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding sized frame + mute sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now sound stops when game is over" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -377,16 +375,12 @@
     <MESSAGE value="Added : menu modification" />
     <MESSAGE value="Last modifications - Game size is now linked to canvas size" />
     <MESSAGE value="Adding sized frame + mute sound" />
+    <MESSAGE value="Now sound stops when game is over" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/framework/Window.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="32" selection-start="3640" selection-end="3640" vertical-scroll-proportion="1.2467742" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DonsterWall.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="317" column="65" selection-start="10334" selection-end="10348" vertical-scroll-proportion="6.368522" />
@@ -437,35 +431,40 @@
         <state line="23" column="1" selection-start="523" selection-end="523" vertical-scroll-proportion="0.55857146" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DonsterMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="34" selection-start="3781" selection-end="3793" vertical-scroll-proportion="0.8542857" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="0" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.8495575">
-          <folding />
-        </state>
+        <state line="90" column="0" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.8495575" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="32" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.9907975">
-          <folding />
-        </state>
+        <state line="38" column="32" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.9907975" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="24" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0">
+        <state line="65" column="48" selection-start="2231" selection-end="2231" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/TWSoundManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="26" selection-start="1920" selection-end="1924" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DonsterMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.8742857">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DonsterGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="46" selection-start="10970" selection-end="10970" vertical-scroll-proportion="0.87218046">
+        <state line="314" column="1" selection-start="10668" selection-end="10668" vertical-scroll-proportion="0.8880995">
           <folding />
         </state>
       </provider>

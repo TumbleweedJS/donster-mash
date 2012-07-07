@@ -17,7 +17,7 @@ function DonsterMenu(width, height)
     this.BtnPlay = new DonsterButton(width - 140, height - 150, 128, 128, this.img_btn_play, this.img_btn_play_pressed);
     this.BtnSound = new DonsterButton(width - 140, 10, 128, 128, this.img_btn_sound, this.img_btn_sound_pressed);
     this.BtnMute = new DonsterButton(width - 140, 10, 128, 128, this.img_btn_mute, this.img_btn_mute_pressed);
-    this.SOUND_MUTED = false;
+    this.SOUND_MUTED = true;
     this.EventManager = new EventManager();
     this.EventManager.Initialize();
 }
